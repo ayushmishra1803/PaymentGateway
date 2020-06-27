@@ -1,0 +1,59 @@
+<h1
+  style="font-family: cursive; font-size: 40px; padding: 20px;"
+  fxLayout
+  fxLayoutAlign="center"
+>
+  Add Debit/Credit/ATM Card
+</h1>
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+  <mat-card>
+    <mat-card-content>
+      <form
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        (ngSubmit)="onsubmit(f)"
+        #f="ngForm"
+      >
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            placeholder="Enter the Name on Card"
+            name="name"
+            ngModel
+            required
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            matInput
+            type="number"
+            placeholder="Enter Card Number"
+            name="cardnumber"
+            ngModel
+            required
+          />
+        </mat-form-field>
+        <label>Expiry date</label>
+        <mat-form-field>
+          <input
+          matInput
+            type="nummber"
+            placeholder="Enter the cand Expire Date"
+            name="expire"
+            name="expire"
+            ngModel
+            required
+          />
+        </mat-form-field>
+        <mat-card-actions>
+          <button mat-raised-button color="accent" (click)="back()" >Back</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">
+            Continue
+          </button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
