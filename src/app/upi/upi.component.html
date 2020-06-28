@@ -1,15 +1,15 @@
 <h1
-  style="font-family: cursive; font-size: 40px; padding: 20px;"
+  style="font-family: cursive; font-size: 38px; padding: 20px;"
   fxLayout
   fxLayoutAlign="center"
 >
-  UPI
+  UPI/Google Pay
 </h1>
 <div>
   <mat-card>
     <form  fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit(f)" #f="ngForm">
       <mat-form-field>
-        <input matInput type="text" name="upi" ngModel placeholder="Enter the UPI id" required>
+        <input matInput type="text" name="upi" ngModel placeholder="Enter the UPI/Google-pay id" required>
         </mat-form-field>
         <mat-card-actions>
           <button mat-raised-button color="accent" (click)="back()" >Back</button>
