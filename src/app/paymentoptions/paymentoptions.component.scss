@@ -1,5 +1,12 @@
 mat-card{
-  width: 80%;
+  border-radius: 30px;
+  border-color: black;
+  width: 200px;
+  height: 200px;
+}
+mat-card img{
+  height: 100px;
+  width:100px
 }
 mat-form-field{
   width: 40%;

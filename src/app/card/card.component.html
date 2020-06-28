@@ -1,59 +1,79 @@
-<h1
-  style="font-family: cursive; font-size: 40px; padding: 20px;"
-  fxLayout
-  fxLayoutAlign="center"
->
-  Add Debit/Credit/ATM Card
-</h1>
-<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
-  <mat-card>
-    <mat-card-content>
-      <form
-        fxLayout="column"
-        fxLayoutAlign="center center"
-        (ngSubmit)="onsubmit(f)"
-        #f="ngForm"
-      >
-        <mat-form-field>
+<div style="padding: 50px;">
+  <div fxLayoutAlign="center">
+    <mat-card>
+      <mat-card-content style="padding: 100px;" fxLayout="column" fxLayoutAlign="center center">
+        <img style="width: 40px; height: 40px;" src="assets\card.png" />
+        <form (ngSubmit)="onsubmit(f)" #f="ngForm" >
+          <label >CARD NUMBER</label><br /><br />
           <input
-            matInput
-            type="text"
-            placeholder="Enter the Name on Card"
-            name="name"
-            ngModel
-            required
-          />
-        </mat-form-field>
+            id="ccn"
+            type="tel"
+            pattern="[0-9\s]{13,19}"
+            autocomplete="cc-number"
+            maxlength="16"
+            placeholder="xxxx xxxx xxxx xxxx"
+          /><br /><br />
+          <div fxLayout fxLayoutAlign="center" fxLayoutGap="30PX">
+            <section>
+              <label >EXPIRES</label><br /><br />
+              <select name="expireMM" id="expireMM">
+                <option value="">Month</option>
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+              <select name="expireYY" id="expireYY">
+                <option value="">Year</option>
+                <option value="10">2020</option>
+                <option value="11">2021</option>
+                <option value="12">2022</option>
+                <option value="12">2023</option>
+                <option value="12">2024</option>
+                <option value="12">2025</option>
+                <option value="12">2026</option>
+                <option value="12">2027</option>
+                <option value="12">2028</option>
+                <option value="12">2029</option>
+                <option value="12">2030</option>
+                <option value="12">2031</option>
+                <option value="12">2032</option>
+              </select>
+              <input
+                class="inputCard"
+                type="hidden"
+                name="expiry"
+                id="expiry"
+                maxlength="4"
+              />
+            </section>
 
-        <mat-form-field>
-          <input
-            matInput
-            type="number"
-            placeholder="Enter Card Number"
-            name="cardnumber"
-            ngModel
-            required
-          />
-        </mat-form-field>
-        <label>Expiry date</label>
-        <mat-form-field>
-          <input
-          matInput
-            type="nummber"
-            placeholder="Enter the cand Expire Date"
-            name="expire"
-            name="expire"
-            ngModel
-            required
-          />
-        </mat-form-field>
-        <mat-card-actions>
-          <button mat-raised-button color="accent" (click)="back()" >Back</button>
-          <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">
-            Continue
-          </button>
-        </mat-card-actions>
-      </form>
-    </mat-card-content>
-  </mat-card>
-</div>
+            <br /><br />
+            <section>
+              <label >CVV</label><br /><br />
+              <input
+                type="text"
+                id="cvv"
+                name="cvv"
+                placeholder="XXX"
+                maxlength="3"
+              />
+            </section>
+
+            <br /><br />
+          </div>
+          <br /><br />
+          <button type="submit" [disabled]="f.invalid">PAY</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+

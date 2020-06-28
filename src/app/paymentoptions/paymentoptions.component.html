@@ -1,26 +1,42 @@
-<h1
-  style="font-family: cursive; font-size: 40px; padding: 20px;"
-  fxLayout
-  fxLayoutAlign="center"
->
-  Payment Methods
-</h1>
-<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
-  <mat-card>
-    <mat-card-content>
-      <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="onsubmit(f)" #f="ngForm">
-        <mat-form-field>
-  <mat-label>Choose the payment method</mat-label>
-  <mat-select  ngModel name="option" ngModel>
-    <mat-option *ngFor="let op of paymentoption" value="{{op.value}}">
-      {{op.name}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-        <mat-card-actions>
-          <button mat-raised-button color="primary" type="submit">Continue</button>
-          </mat-card-actions>
-      </form>
+<div fxLayout fxLayoutAlign="center" style="font-family: cursive; font-size: 30px;padding: 50px;">
+  Pay Using
+
+</div>
+<div fxLayout="column"  fxLayoutAlign="center center" fxLayoutGap="20px">
+<div fxLayout  fxLayoutGap="100px" >
+<div  style="cursor: pointer;" (click)="oncard()">
+  <mat-card fxLayout="column" fxLayoutAlign="center center">
+  <img matCardImage src="assets/card.png">
+  <mat-card-content>
+    Pay Using Card
     </mat-card-content>
   </mat-card>
+</div>
+<div  style="cursor: pointer;"(click)="upi()" >
+  <mat-card fxLayout="column" fxLayoutAlign="center center">
+  <img matCardImage src="assets/upi.png">
+   <mat-card-content>
+    Pay Using UPI
+    </mat-card-content>
+  </mat-card>
+</div>
+<div  style="cursor: pointer;"(click)="net()" >
+  <mat-card fxLayout="column" fxLayoutAlign="center center">
+  <img matCardImage src="assets/net.png">
+   <mat-card-content>
+    Pay Netbanking
+    </mat-card-content>
+  </mat-card>
+</div>
+</div>
+<div fxLayout fxLayoutAlign="start" fxLayoutGap="100px">
+<div  style="cursor: pointer;"(click)="upi()" >
+  <mat-card fxLayout="column" fxLayoutAlign="center center">
+  <img matCardImage src="assets/google.png">
+   <mat-card-content>
+    Pay Google Pay
+    </mat-card-content>
+  </mat-card>
+</div>
+</div>
 </div>

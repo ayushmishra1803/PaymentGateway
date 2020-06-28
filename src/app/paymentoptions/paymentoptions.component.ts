@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-paymentoptions',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./paymentoptions.component.scss'],
 })
 export class PaymentoptionsComponent implements OnInit {
-  constructor(private router:Router) {}
+  constructor(private router: Router) {}
   paymentoption = [
     { value: 'Card', name: 'Add Debit/Credit/ATM Card' },
     { value: 'NetBanking', name: 'Net Banking' },
@@ -16,19 +17,11 @@ export class PaymentoptionsComponent implements OnInit {
   ];
 
   ngOnInit(): void {}
-  onsubmit(f: NgForm) {
-   if(f.value.option==="Card"){
-   this.router.navigate(['/card']);
+  oncard(){ this.router.navigate(['/card']);}
+  upi(){   this.router.navigate(['/upi']);
 
-   }
-   if(f.value.option==="NetBanking"){
-     this.router.navigate(['/netbanking']);
-
-   }
-   if(f.value.option==="UPI")
-   {
-      this.router.navigate(['/upi']);
-
-   }
-  }
+}
+net(){
+ this.router.navigate(['/netbanking']);
+}
 }

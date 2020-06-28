@@ -1,6 +1,12 @@
 mat-card{
-  width: 80%;
+  border-radius: 30px;
+  border-color: black;
+  width: fit-content;
+  height: fit-content;
 }
-mat-form-field{
-  width: 40%;
+button{
+  width: 400px;
+  background-color: black;
+  color: white;
+
 }
