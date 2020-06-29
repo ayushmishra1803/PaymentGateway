@@ -22,6 +22,7 @@
             placeholder="Enter the Bank Name"
             required
             minlength="4"
+            ngModel
           />
         </mat-form-field>
         <mat-form-field>
@@ -32,8 +33,9 @@
             placeholder="Enter the Username"
             maxlength="15"
             required
+            ngModel
           />
-          <mat-error>Please Enter the  Valid User Name </mat-error>
+          <mat-error>Please Enter the Valid User Name </mat-error>
         </mat-form-field>
         <mat-form-field>
           <input
@@ -42,6 +44,7 @@
             name="password"
             placeholder="Enter the Password"
             required
+            ngModel
           />
         </mat-form-field>
         <mat-card-actions>
@@ -52,7 +55,7 @@
             mat-raised-button
             type="submit"
             color="primary"
-           [disabled]="f.invalid"
+            [disabled]="f.invalid"
           >
             Submit
           </button>
