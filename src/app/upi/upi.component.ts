@@ -18,6 +18,6 @@ export class UpiComponent implements OnInit {
       this.snackBar.open('Payemnt Successfull', null, {
         duration: 2000,
       });
-    }, 2000);
+    }, 8000);
   }
 }
