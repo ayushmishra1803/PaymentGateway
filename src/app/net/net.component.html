@@ -3,26 +3,61 @@
   fxLayout
   fxLayoutAlign="center"
 >
-Net Banking
+  Net Banking
 </h1>
 <div>
   <mat-card>
     <mat-card-content>
-      <form (ngSubmit)="submit(f)" #f="ngForm" fxLayout="column" fxLayoutAlign="center center">
+      <form
+        (ngSubmit)="submit(f)"
+        #f="ngForm"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+      >
         <mat-form-field>
-          <input matInput type="text" name="bank" placeholder="Enter the Bank Name" required>
-          </mat-form-field>
-          <mat-form-field>
-          <input matInput type="text" name="username" placeholder="Enter the Username"  required>
-          </mat-form-field>
-          <mat-form-field>
-          <input matInput type="password" name="password" placeholder="Enter the Password"  required>
-          </mat-form-field>
-          <mat-card-actions>
-          <button mat-raised-button color="accent" (click)="back()"> Back</button>
-          <button mat-raised-button type="submit" color="primary" [disabled]="f.invalid">Submit</button>
-</mat-card-actions>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  </div>
+          <input
+            matInput
+            type="text"
+            name="bank"
+            placeholder="Enter the Bank Name"
+            required
+            minlength="4"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            name="username"
+            placeholder="Enter the Username"
+            maxlength="15"
+            required
+          />
+          <mat-error>Please Enter the  Valid User Name </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            name="password"
+            placeholder="Enter the Password"
+            required
+          />
+        </mat-form-field>
+        <mat-card-actions>
+          <button mat-raised-button color="accent" (click)="back()">
+            Back
+          </button>
+          <button
+            mat-raised-button
+            type="submit"
+            color="primary"
+           [disabled]="f.invalid"
+          >
+            Submit
+          </button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
