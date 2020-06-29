@@ -5,8 +5,24 @@ mat-card{
   height: fit-content;
 }
 button{
-  width: 400px;
+  width:400px;
   background-color: black;
   color: white;
+}
+.mob{
+  width:300px;
+}
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.mobbutton{
 
+  width: 300px;
+  background-color: black;
+  color: white;
 }

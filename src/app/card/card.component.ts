@@ -12,7 +12,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {}
   onsubmit(f: NgForm) {
-    this.router.navigate(['/otp']);
+    this.router.navigate(['/upi']);
   }
   back(){
     this.router.navigate(['/'])

@@ -1,5 +1,6 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upi.component.scss'],
 })
 export class UpiComponent implements OnInit {
-  constructor(private router:Router) {}
+  constructor(private router: Router, private snackBar: MatSnackBar) {}
 
-  ngOnInit(): void {}
-  submit(f: NgForm) {
-    this.router.navigate(['/otp'])
-  }
-  back(){
-    this.router.navigate(['/']);
+  time = 8;
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.router.navigate(['/payoption']);
+      this.snackBar.open('Payemnt Successfull', null, {
+        duration: 2000,
+      });
+    }, 2000);
   }
 }

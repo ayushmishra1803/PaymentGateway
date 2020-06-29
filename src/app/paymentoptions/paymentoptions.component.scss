@@ -1,13 +1,10 @@
 mat-card{
-  border-radius: 30px;
-  border-color: black;
-  width: 200px;
-  height: 200px;
+width:400px;
 }
-mat-card img{
-  height: 100px;
-  width:100px
+mat-card-content{
+  text-align: center;
+  color: white;
 }
-mat-form-field{
-  width: 40%;
+.mob{
+  width:60px;
 }
