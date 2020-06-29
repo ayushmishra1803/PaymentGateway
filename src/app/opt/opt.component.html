@@ -8,14 +8,36 @@
 <div>
   <mat-card>
     <mat-card-content>
-      <form (ngSubmit)="submit(f)" #f="ngForm" fxLayout="column" fxLayoutAlign="center center">
+      <form
+        (ngSubmit)="submit(f)"
+        #f="ngForm"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+      >
         <mat-form-field *ngIf="!isloading">
-          <input matInput type="number" name="opt" placeholder="Enter the Opt" ngModel required maxlength="4">
-          </mat-form-field>
-          <button mat-raised-button type="submit" color="primary" *ngIf="!isloading" [disabled]="f.invalid">Submit</button>
-           <div *ngIf="isloading">Payment in Process Please dont refresh</div>
-          <mat-spinner *ngIf="isloading"></mat-spinner>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  </div>
+          <input
+            matInput
+            type="tel"
+            name="opt"
+            placeholder="Enter the Opt"
+            ngModel
+             maxlength="4"
+            required
+
+          />
+        </mat-form-field>
+        <button
+          mat-raised-button
+          type="submit"
+          color="primary"
+          *ngIf="!isloading"
+          [disabled]="f.invalid"
+        >
+          Submit
+        </button>
+        <div *ngIf="isloading">Payment in Process Please dont refresh</div>
+        <mat-spinner *ngIf="isloading"></mat-spinner>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
